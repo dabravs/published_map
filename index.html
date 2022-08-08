@@ -48,6 +48,13 @@
 
       .hidden { visibility: hidden; }
 
+      .sticky-thing {
+        max-width: 900px;
+        margin: auto;
+        border-style: solid 
+
+      }
+
       /* When it's less than 700 pixels wide, do normal scrollytelling */
       @media only screen and (min-width: 700px) {
         #scrolly.side-by-side {
@@ -82,8 +89,9 @@
   </head>
 
   <body>
-	<h1>A daily frustration of commuting: parking</h1>
-  <p>By: Diana Bravo</p>
+    <!-- <p style="font-family:verdana">This is a paragraph.</p> -->
+	<h1 style="font-family:Arial, Helvetica, sans-serif"> A daily frustration of commuting in New York: parking</h1>
+  <p style="font-family: Arial">By: Diana Bravo</p>
       <section id="scrolly">
         <div class="sticky-thing">
           <div class="ai2html-container">
@@ -185,8 +193,8 @@
 </style>
 </svg>
 
-		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:14.5366%;margin-top:-7.5px;left:83.8716%;width:87px;">
-			<p class="g-pstyle0">Lorem ipsum</p>
+		<!-- <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:14.5366%;margin-top:-7.5px;left:83.8716%;width:87px;">
+			<p class="g-pstyle0">Lorem ipsum</p> -->
 		</div>
 	</div>
 
@@ -201,23 +209,33 @@
 
         <div class="scrolly-overlay">
           <div class="step" id="step-zero">
-            <p>In the greater New York area, thousands of commuters take either the Long Island Railroad
+            <p style="font-family:Arial">In the greater New York area, thousands of commuters take either the Long Island Railroad
             or the Metro North to work every day. Every one of those commuters needs to figure out where
             they leave their cars for the day. </p>
           </div>
           <div class="step" id="step-one">
-            <p>Many local train stations provide vast parking lots for commuters. This one in Old Greenwich, CT,
+            <p style="font-family:Arial">Many local train stations provide vast parking lots for commuters. This one in Old Greenwich, CT,
               can accomodate about 570 cars at a time. However, parking here is a two-tiered paid system. As of 2022, 
               parking pass costs $456. For a regular commuter, that works out to abotu $1.80 for parking every workday.</p>
           </div>
           <div class="step" id="step-two">
-            <p>The waiting list to obtain one of these passes can take months. Meanwhile, commuters must park in the day 
+            <p style="font-family:Arial">The waiting list to obtain one of these passes can take months. Meanwhile, commuters must park in the day 
               parking lots, paying $7 every time they go in to work.
             </p>
           </div>
           <div class="step" id="step-three">
-            <p>Annually, daily parkers must pay $1,750 to park for work.</p>
+            <p style="font-family:Arial">Annually, daily parkers must pay $1,750 to park for work.</p>
         </div>
+        <div class="step" id="step-four">
+          <p style="font-family:Arial">However, around half of the annual parking spots are empty on any given weekday.</p>
+      </div>
+      <div class="step" id="step-five">
+        <p style="font-family:Arial">Meanwhile, almost all of the daily parking spots are full seven days a week.</p>
+       </div>
+        <div class="step" id="step-six">
+          <p style="font-family:Arial">Many towns in the area implement this parking system, leaving those who cannot obtain or afford a parking pass up front
+            paying substantially more than their counterparts. This discrepancy in parking prices can put unnecesscary strain on commuter's budgets.</p>
+      </div>
       </section>
 
     <script>
@@ -256,6 +274,27 @@
         d3.select('#annual_parking').style('fill', '#A366C7')
         d3.select('#annual_parking-2').style('fill', '#A366C7')
         d3.select('#annual_parking-3').style('fill', '#A366C7')
+      })
+      d3.select("#step-four").on('stepin', function(e){
+        d3.select('#day_parking').style('fill', '#6500A2')
+        d3.select('#day_parking-2').style('fill', '#6500A2')
+        d3.select('#annual_parking').style('fill', '#6500A2')
+        d3.select('#annual_parking-2').style('fill', '#6500A2')
+        d3.select('#annual_parking-3').style('fill', '#A366C7')
+      })
+      d3.select("#step-five").on('stepin', function(e){
+        d3.select('#day_parking').style('fill', '#E0CCEC')
+        d3.select('#day_parking-2').style('fill', '#E0CCEC')
+        d3.select('#annual_parking').style('fill', '#6500A2')
+        d3.select('#annual_parking-2').style('fill', '#6500A2')
+        d3.select('#annual_parking-3').style('fill', '#6500A2')
+      })
+      d3.select("#step-six").on('stepin', function(e){
+        d3.select('#day_parking').style('fill', '#E0CCEC')
+        d3.select('#day_parking-2').style('fill', '#E0CCEC')
+        d3.select('#annual_parking').style('fill', '#6500A2')
+        d3.select('#annual_parking-2').style('fill', '#6500A2')
+        d3.select('#annual_parking-3').style('fill', '#6500A2')
       })
     </script>
 
